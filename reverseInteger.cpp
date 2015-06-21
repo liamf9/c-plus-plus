@@ -35,7 +35,7 @@ int getLength(int num) {
 	{
 		num /= 10;
 		
-		digitCount++;
+		++digitCount;
 		
 		num <= 10 ? ++digitCount : digitCount;
 	}	
