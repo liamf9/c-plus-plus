@@ -1,15 +1,15 @@
 #include <iostream>
-#define NUMBER 2147483647 /* Largest unsigned 32-bit integer */
+#include <limits>
 using namespace std;
 
 int getLength(int num);
 
 int main() {
-	int number = NUMBER;
+	int number = numeric_limits<int>::max();
 	int length = getLength(number);
 	int reversed [length];
 	int arrayCount = 0;
-	int captured = NULL;
+	int captured = 0;
 
 	while(number > 0) 
 	{
