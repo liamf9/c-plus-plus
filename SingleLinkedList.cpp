@@ -1,31 +1,41 @@
 #include <iostream>
-using namespace std;
-
-/* Notes: Create argument vector and count for length of list. */
 
 struct Node {
 	int data;
-	/* Node *prev; */
 	Node *next;
 };
+
+void insertData(Node* &current, int data)
+{
+	current->data = data;
+	current->next = new Node;
+	current = current->next;
+}
 
 int main()
 {
 	Node *list = new Node;
 	Node *head = list;
 
-	for (int i = 0; i < 10; i++)
+	int data = 0;
+	char answer = 'y';
+
+	while(answer == 'y')
 	{
-		list->data = i;
-		list->next = new Node;
-		list = list->next;
-	}
+		std::cout << "enter data: ";
+		std::cin >> data;
+
+		insertData(list,data);
+
+		std::cout << "again: ";
+		std::cin >> answer;
+	}	
 
 	list->next = NULL;
 
-	while (head->next != NULL)
+	while(head->next != NULL)
 	{
-		cout << head->data << " ";
+		std::cout << head->data << " ";
 		head = head->next;
 	}
 
