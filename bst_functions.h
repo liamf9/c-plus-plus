@@ -6,23 +6,23 @@ struct Leaf {
 
 void insert( Leaf *&root, int val )
 {
-	Leaf *temp, *parent;
+	Leaf *current, *parent;
 	if( root == NULL )
 	{
 		root = new Leaf;
 		root->value = val;
 		root->left = root->right = NULL;
-		temp = root;
+		current = root;
 	} else {
-		temp = root;
-		while(temp!=NULL)
+		current = root;
+		while(current!=NULL)
 		{
-			if( val < temp->value ) {
-				parent = temp;
-				temp = temp->left;
+			if( val < current->value ) {
+				parent = current;
+				current = current->left;
 			} else {
-				parent = temp;
-				temp = temp->right;
+				parent = current;
+				current = current->right;
 			}
 		}
 		Leaf *node = new Leaf;
