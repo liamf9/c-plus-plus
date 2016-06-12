@@ -1,3 +1,5 @@
+#include <stack>
+
 struct Leaf {
 	Leaf* left;
 	Leaf* right;
