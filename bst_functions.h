@@ -30,8 +30,7 @@ void insert(Leaf *&root, int val)
 		leaf->value = val;
 		leaf->left = leaf->right = NULL;
 
-		if( val < parent->value ) parent->left = leaf;
-		else parent->right = leaf;
+		val < parent->value ? parent->left = leaf : parent->right = leaf;
 	}
 }
 
