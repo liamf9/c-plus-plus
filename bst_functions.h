@@ -1,9 +1,9 @@
 #include <stack>
 
 struct Leaf {
+	int value;
 	Leaf* left;
 	Leaf* right;
-	int value;
 };
 
 void insert(Leaf *&root, int val)
