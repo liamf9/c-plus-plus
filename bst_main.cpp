@@ -16,5 +16,9 @@ int main()
 
 	inorder(root);
 
+	std::cout << std::endl;
+
+	inorder(root);
+
 	return 0;
 }

@@ -36,6 +36,7 @@ void insert(Leaf *&root, int val)
 
 void inorder(Leaf *&root)
 {
+	Leaf *original = root;
 	std::stack<Leaf*> s;
 	while(!s.empty() || root != NULL)
 	{
@@ -50,4 +51,5 @@ void inorder(Leaf *&root)
 			root = root->right;
 		}
 	}
+	root = original;
 }
