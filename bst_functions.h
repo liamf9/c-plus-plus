@@ -54,7 +54,7 @@ void inorder(Leaf *&root)
 	root = original;
 }
 
-int search(Leaf *&root, int value)
+void search(Leaf *&root, int value)
 {
 	Leaf *current = root;
 	bool found = false;
