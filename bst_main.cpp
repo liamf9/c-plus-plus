@@ -18,7 +18,7 @@ int main()
 
 	std::cout << std::endl;
 
-	inorder(root);
+	search(root, 3);
 
 	return 0;
 }
