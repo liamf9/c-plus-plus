@@ -56,7 +56,10 @@ void inorder(Leaf *&root)
 
 void search(Leaf *&root, int value)
 {
+	Leaf *original = root;
+	
 	Leaf *current = root;
+	
 	bool found = false;
 	while (!found && current)
 	{
@@ -65,6 +68,30 @@ void search(Leaf *&root, int value)
 		else if (value == current->value) { 
 			std::cout << "found: " << current->value;
 			found = true;
+		} else {
+			std::cout << "not found." << std::endl;
+			found = false;
 		}
 	}
+	root = original;
+}
+
+Leaf* find(Leaf *&root, int value)
+{
+	Leaf *current = root;
+	Leaf *original = root;
+	std::cout << original << std::endl;
+	Leaf *rValue = NULL;
+
+	bool found = false;
+	while( !found && current )
+	{
+		if(value < current->value) current = current->left;
+		else if(value > current->value) current = current->right;
+		else if(value == current->value) { rValue = current; found = true; }
+		else { rValue = NULL; current = NULL; }
+	}
+	root = original;
+	std::cout << root << std::endl;
+	return rValue;
 }

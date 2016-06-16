@@ -18,7 +18,18 @@ int main()
 
 	std::cout << std::endl;
 
-	search(root, 3);
+	search( root, 3 );
+
+	std::cout << std::endl;
+	
+	Leaf *test = find( root, 3 );
+
+	test ? std::cout << "found leaf." : std::cout << "no leaf found.";
+
+	if(test)
+	{
+		std::cout << test->value << " " << "left: " << test->left->value << " right: " << test->right->value << std::endl; 
+	}
 
 	return 0;
 }
